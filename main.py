@@ -2,6 +2,15 @@ import praw
 from heapq import nlargest
 from yahoo_fin import stock_info as si
 
+reddit = praw.Reddit(
+    client_id="client_id",
+    client_secret="client_secret",
+    user_agent="user_agent",
+    username="username",
+    password="password",
+    check_for_async=False
+)
+
 def get_price(stock_ticker):
   return (si.get_live_price(stock_ticker))
 
